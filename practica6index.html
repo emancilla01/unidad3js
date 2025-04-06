@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practica 6 Javascript Ejercicios v1</title>
+    <!-- https://github.com/emancilla01/unidad3js.git -->
     <style>
-        aside, header, nav, article, footer {
-            
+        aside, header, nav, article, footer {            
             border: 2px solid black;
             margin: 15px;
         }
-        header h1 {
+        header h1,article {
             text-align: center;
         }
         aside {
-            width: 30%;
-            
+            width: 30%;            
         }
+        
         section{
             width: 70%;
         }
@@ -28,11 +28,20 @@
         }
         article  {
             height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         ul{
             margin: 0px;
             padding: 0px;
             text-align: center;
+        }
+        aside ul {
+            height: 100%; /* Ensure the ul takes the full height of the aside */
+            display: flex;
+            flex-direction: column; /* Stack the list items vertically */
+            justify-content: center; /* Center the list items vertically */
         }
         li {
             list-style-type: none;
@@ -41,9 +50,10 @@
             padding: 0px;
             margin: 10px auto;
             text-align: center;
-            width: 100px;   
-            
-    
+            width: 200px;   
+            align-items: center;
+            justify-content: center; 
+            display: flex;
         }
         li:hover{
             background-color: aquamarine;
@@ -59,28 +69,24 @@
             border-radius: 10px 30px;
         }
         td,th{
-            border: 1px solid blue;
-            
+            border: 1px solid blue;            
         }
         td:hover{
             background-color: red;
-        }
-        
+        }        
     </style>
 </head>
 <body>
     <div>
         <aside>
             <ul>
-                <li><a href="#" onclick="ver('personas.html')">Personas</a></li>
-                <li><a href="#" onclick="ver('autos.html')">Autos</a></li>
-                <li><a href="#" onclick="ver('animales.html')">Animales</a></li>
-                <li><a href="#" onclick="ver('equipocomputo.html')">Equipo Computo</a></li>
-                <li><a href="#">opcion 5</a></li>
-                <li><a href="#">opcion 6</a></li>
-                <li><a href="#">opcion 7</a></li>
-                <li><a href="#">opcion 8</a></li>
-                <li><a href="#pie">Ir abajo</a></li>
+                <li><a href="#" onclick="ver('personas.html')">Ver mensaje con: ALERT</a></li>
+                <li><a href="#" onclick="ver('autos.html')">Ver mensaje segun cuadro de texto</a></li>
+                <li><a href="#" onclick="ver('animales.html')">Insertar Contenido ver 1</a></li>
+                <li><a href="#" onclick="ver('equipocomputo.html')">Insertar Contenido ver 2</a></li>
+                <li><a href="#" onclick="ver('equipocomputo.html')">Insertar Contenido ver 3</a></li>
+                <li><a href="#" onclick="ver('equipocomputo.html')">Contador</a></li>
+                
             </ul>
         </aside>
         <section>
@@ -97,7 +103,7 @@
                 </ul>
             </nav> -->
             <article>
-                <p>Bienvenidos a la galeria de fotos.</p>
+                <p>Es una serie de ejercicios desarrollados con JAVASCRIPT</p>
             </article>
             </div>
             <footer>
