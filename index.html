@@ -6,33 +6,34 @@
     <title>Practica 6 Javascript Ejercicios v1</title>
     <!-- https://github.com/emancilla01/unidad3js.git -->
     <style>
-        aside, header, nav, article, footer {            
+        
+        aside, header, article, footer {            
             border: 2px solid black;
             margin: 15px;
         }
-        header h1,article {
+        header h1, article {
             text-align: center;
         }
         aside {
             width: 30%;            
         }
-        
-        section{
+        section {
             width: 70%;
         }
-        body>div {
+        body > div {
             display: flex;
         }
-        nav > ul >li {
-            display: inline;
-        }
-        article  {
+        article {
             height: 600px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            text-align: center; /* Center text horizontally */
         }
-        ul{
+        article p {
+            display: inline-block; /* Ensure the paragraph doesn't stretch */
+            line-height: normal; /* Reset line height for the paragraph */
+            vertical-align: middle; /* Vertically align the paragraph */
+        }
+        
+        ul {
             margin: 0px;
             padding: 0px;
             text-align: center;
@@ -55,25 +56,27 @@
             justify-content: center; 
             display: flex;
         }
-        li:hover{
+        li:hover {
             background-color: aquamarine;
         }
         a {
             color: black;
             text-decoration: none;
         }
-        img{
+        img {
             width: 100px;
             height: 100px;
             margin: 5px;
             border-radius: 10px 30px;
         }
-        td,th{
+        td, th {
             border: 1px solid blue;            
         }
-        td:hover{
+        td:hover {
             background-color: red;
-        }        
+        }
+       
+        
     </style>
 </head>
 <body>
@@ -81,11 +84,11 @@
         <aside>
             <ul>
                 <li><a href="#" onclick="ver('alert.html')">Ver mensaje con: ALERT</a></li>
-                <li><a href="#" onclick="ver('autos.html')">Ver mensaje segun cuadro de texto</a></li>
-                <li><a href="#" onclick="ver('animales.html')">Insertar Contenido ver 1</a></li>
-                <li><a href="#" onclick="ver('equipocomputo.html')">Insertar Contenido ver 2</a></li>
-                <li><a href="#" onclick="ver('equipocomputo.html')">Insertar Contenido ver 3</a></li>
-                <li><a href="#" onclick="ver('equipocomputo.html')">Contador</a></li>
+                <li><a href="#" onclick="ver('cuadro.html')">Ver mensaje segun cuadro de texto</a></li>
+                <li><a href="#" onclick="ver('ver1.html')">Insertar Contenido ver 1</a></li>
+                <li><a href="#" onclick="ver('ver2.html')">Insertar Contenido ver 2</a></li>
+                <li><a href="#" onclick="ver('ver3.html')">Insertar Contenido ver 3</a></li>
+                <li><a href="#" onclick="ver('contador.html')">Contador</a></li>
                 
             </ul>
         </aside>
@@ -93,15 +96,7 @@
             <header>
                 <h1>Ejercicios de Javascript</h1>
             </header>
-            <div id="contenedor1">
-            <!-- <nav>
-                <ul>
-                    <li>subopcion 1</li>
-                    <li>subopcion 2</li>
-                    <li>subopcion 3</li>
-                    <li>subopcion 4</li>
-                </ul>
-            </nav> -->
+            <div id="contenedor1">            
             <article>
                 <p>Es una serie de ejercicios desarrollados con JAVASCRIPT</p>
             </article>
@@ -119,5 +114,27 @@
             .then (response => response.text())
             .then (data => {div1.innerHTML = data });
     }
+    
+    function verMensaje() {
+            alert("Bienvenido a JAVASCRIPT (UNIDAD 3)");
+    }
+    function mostrarMensaje() {
+    const texto = document.getElementById("mensaje").value;
+    alert(texto);
+    }
+    function mostrarEnDiv() {
+    const texto = document.getElementById("texto").value;
+    const divResultado = document.getElementById("resultado");
+    resultado.textContent = texto;
+    }
+    function agregarTexto() {
+    const texto = document.getElementById("mensaje").value;
+    const resultado = document.getElementById("resultado");
+    
+    if (texto.trim() !== "") {
+        resultado.innerHTML += texto + "<br>";
+    }
+    }
+
 </script>
 </html>
