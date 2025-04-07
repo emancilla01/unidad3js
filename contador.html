@@ -1,0 +1,24 @@
+
+<article>
+    <h3>Ejercicio 6</h3>
+    <h1>Contador</h1>
+    <p>El ejercicio consiste en desplegar un CONTADOR: proporcionando el valor
+        inicial desde un cuadro de texto y un boton.
+    </p>
+    <p>Tambien contara con DOS botones para indicarle si se prefiere aumentar o
+        disminuir el contador en intervalos de 10.
+    </p>
+    <br>
+    <label for="">Numero de inicio del contador: </label>   
+    <br> 
+    <input type="number" id="inicio" step="10" oninput="actualizarContador()" >
+    <br>
+    <button onclick="incrementar()">Incrementar</button>
+    <br>
+    <button onclick="decrementar()">Decrementar</button>
+    <div style="margin-top: 20px; font-weight: bold;">Contador</div>
+    <br>
+    <div id="contador" style="font-size: 30px;" ></div> 
+</article>
+   
+    

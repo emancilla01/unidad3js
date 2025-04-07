@@ -135,6 +135,26 @@
         resultado.innerHTML += texto + "<br>";
     }
     }
+    function limpiarTexto() {
+    document.getElementById("resultado").innerHTML = "";
+    }
+    let valor = 0;
+
+    function actualizarContador() {
+    const input = document.getElementById("inicio").value;
+    valor = parseInt(input) || 0;
+    document.getElementById("contador").textContent = valor;
+    }
+
+    function incrementar() {
+    valor += 10;
+    document.getElementById("contador").textContent = valor;
+    }
+
+    function decrementar() {
+    valor -= 10;
+    document.getElementById("contador").textContent = valor;
+    }
 
 </script>
 </html>
