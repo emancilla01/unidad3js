@@ -24,14 +24,15 @@
             display: flex;
         }
         article {
-            height: 600px;
+            min-height: 600px;
             text-align: center; /* Center text horizontally */
+            box-sizing: border-box;
         }
-        article p {
-            display: inline-block; /* Ensure the paragraph doesn't stretch */
-            line-height: normal; /* Reset line height for the paragraph */
-            vertical-align: middle; /* Vertically align the paragraph */
-        }
+        /* article p {
+            display: inline-block; 
+            line-height: normal; 
+            vertical-align: middle; 
+        } */
         
         ul {
             margin: 0px;
@@ -75,6 +76,15 @@
         td:hover {
             background-color: red;
         }
+        form{
+            display: flex;
+            flex-flow: row wrap;
+            
+        }
+        label, input, fieldset{
+            width: 50%;
+            box-sizing: border-box;
+        }
        
         
     </style>
@@ -89,6 +99,7 @@
                 <li><a href="#" onclick="ver('ver2.html')">Insertar Contenido ver 2</a></li>
                 <li><a href="#" onclick="ver('ver3.html')">Insertar Contenido ver 3</a></li>
                 <li><a href="#" onclick="ver('contador.html')">Contador</a></li>
+                <li><a href="#" onclick="ver('peticiones.php')">Peticiones FETCH (API)</a></li>
                 
             </ul>
         </aside>
@@ -155,6 +166,20 @@
     valor -= 10;
     document.getElementById("contador").textContent = valor;
     }
+    function enviar(accion) {
+            const form = document.getElementById("frm");
+            const formData = new FormData(form);
+            formData.set("accion", accion);
+
+            fetch("peticiones.php", {
+                method: "POST",
+                body: formData
+            })
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("resultado").textContent = data;
+            });
+        }
 
 </script>
 </html>
