@@ -79,13 +79,22 @@
         form{
             display: flex;
             flex-flow: row wrap;
-            
+            width: 60%;
+            margin: 5px auto;            
         }
         label, input, fieldset{
             width: 50%;
             box-sizing: border-box;
         }
-       
+        legend{
+            box-sizing: border-box;
+        }
+        fieldset{            
+            margin: 0;
+        }
+        input+fieldset {
+            width: 100%;
+        } 
         
     </style>
 </head>

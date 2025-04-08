@@ -56,14 +56,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <label>Email:</label>
         <input type="email" name="email"><br>
 
-        <label>Clave:</label>
+        <label>Clave para tu usuario:</label>
         <input type="password" name="clave"><br>
 
-        <label>Fecha:</label>
+        <label>Fecha de creacion:</label>
         <input type="date" name="fecha"><br>
 
         <label>ROLL:</label><br>
-        <label></label>
         <input type="radio" name="roll" value="Admin"> Admin
         <input type="radio" name="roll" value="Proveedor"> Proveedor
         <input type="radio" name="roll" value="Cliente"> Cliente<br>
@@ -73,14 +72,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <option value="001">Ventas</option>
             <option value="002">Recursos Humanos</option>
             <option value="003">Sistemas</option>
-        </select><br>
-
-        <label>Formas de pago:</label><br>
-        <input type="checkbox" name="formapago[]" value="Efectivo"> Efectivo<br>
-        <input type="checkbox" name="formapago[]" value="Transferencia Electronica"> Transferencia Electronica<br>
-        <input type="checkbox" name="formapago[]" value="Tarjeta de Credito"> Tarjeta de Crédito<br>
-        <input type="checkbox" name="formapago[]" value="Criptomoneda"> Criptomoneda<br><br>
-
+        </select>
+        
+        
+            <label>Formas de pago del Cliente:</label>        
+            <input type="checkbox" name="formapago[]" value="Efectivo"> Efectivo
+            <input type="checkbox" name="formapago[]" value="Transferencia Electronica"> Transferencia Electronica
+            <input type="checkbox" name="formapago[]" value="Tarjeta de Credito"> Tarjeta de Crédito
+            <input type="checkbox" name="formapago[]" value="Criptomoneda"> Criptomoneda
+        
+        <label for=""></label>
         <input type="hidden" name="accion" id="accion">
 
         <button onclick="enviar('insertar')">INSERTAR</button>
