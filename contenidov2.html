@@ -1,0 +1,34 @@
+
+<article>
+    <h3>Ejercicio 8</h3>
+    <h1>Manipular contenido en Elementos version 2</h1>
+    <hr>
+    <p>Partiendo del ejercicio 8: incluir un SELECT para seleccionar la 
+        imagen y cambiarla
+    </p>
+    <hr>
+    <img id="fotoEjemplo" src="/imagenes/camisa1.png" width="50px"><br><br>
+    
+    
+    <label for="foto">Foto: </label>   
+    
+    <select id="foto" onchange="actualizarImagen()">
+        <option value="/imagenes/camisa1.png">Camisa 1</option>
+        <option value="imagenes/camisa2.png">Camisa 2</option>
+    </select>
+    <br><br>
+    <label for="cantidad">Cantidad de fotos a desplegar: </label>
+    <input type="range" id="cantidad" min="1" max="20" value="1" oninput="actualizarCantidad()" >
+    <label for=""  >Total fotos:</label>
+    <span id="totalFotos" style="font-size: 35px;" >1</span>
+    <hr>
+    <hr>
+    
+    
+    <div id="contenedor" ></div>
+    <hr>
+    <hr>
+</article>
+
+   
+    

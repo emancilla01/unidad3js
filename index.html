@@ -109,6 +109,7 @@
                 <li><a href="#" onclick="ver('ver3.html')">Insertar Contenido ver 3</a></li>
                 <li><a href="#" onclick="ver('contador.html')">Contador</a></li>
                 <li><a href="#" onclick="ver('peticiones.php')">Peticiones FETCH (API)</a></li>
+                <li><a href="#" onclick="ver('contenidov2.html')">Manipular contenido Version 2</a></li>
                 
             </ul>
         </aside>
@@ -132,9 +133,18 @@
         div1 = document.querySelector("#contenedor1");
         fetch (url)
             .then (response => response.text())
-            .then (data => {div1.innerHTML = data });
+            .then (data => {div1.innerHTML = data 
+                if (url.includes("contenidov2.html")) {
+                setTimeout(() => {
+                    actualizarImagen();
+                }, 50);
+            }
+            });
+        
     }
     
+   
+
     function verMensaje() {
             alert("Bienvenido a JAVASCRIPT (UNIDAD 3)");
     }
@@ -189,6 +199,32 @@
                 document.getElementById("resultado").textContent = data;
             });
         }
+        
+        function actualizarImagen() {
+      const nuevaSrc = document.getElementById("foto").value;
+      document.getElementById("fotoEjemplo").src = nuevaSrc;
+      actualizarCantidad();
+    }
+
+    function actualizarCantidad() {
+      const cantidad = document.getElementById("cantidad").value;
+      const imagen = document.getElementById("foto").value;
+      const contenedor = document.getElementById("contenedor");
+
+      document.getElementById("totalFotos").textContent = cantidad;
+
+
+      contenedor.innerHTML = "";
+      for (let i = 0; i < cantidad; i++) {
+        contenedor.innerHTML += `<img src="${imagen}" width="70px"> `;
+      }
+    }
+
+    // Ejecutar esto cuando se cargue toda la página
+    window.onload = () => {
+      actualizarImagen(); // esta función llama también a actualizarCantidad
+    };
+
 
 </script>
 </html>
