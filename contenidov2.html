@@ -16,6 +16,9 @@
         <option value="/imagenes/camisa1.png">Camisa 1</option>
         <option value="imagenes/camisa2.png">Camisa 2</option>
     </select>
+    <label for="tamano">Tamaño:</label>
+<input type="range" id="tamano" min="50" max="300" value="100" oninput="actualizarImagen()">
+
     <br><br>
     <label for="cantidad">Cantidad de fotos a desplegar: </label>
     <input type="range" id="cantidad" min="1" max="20" value="1" oninput="actualizarCantidad()" >

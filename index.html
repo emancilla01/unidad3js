@@ -177,12 +177,14 @@
     }
 
     function incrementar() {
-    valor += 10;
+    const paso = parseInt(document.getElementById("paso").value) || 1;
+    valor += paso;
     document.getElementById("contador").textContent = valor;
     }
 
     function decrementar() {
-    valor -= 10;
+    const paso = parseInt(document.getElementById("paso").value) || 1;
+    valor -= paso;
     document.getElementById("contador").textContent = valor;
     }
     function enviar(accion) {
@@ -201,23 +203,29 @@
         }
         
         function actualizarImagen() {
-      const nuevaSrc = document.getElementById("foto").value;
-      document.getElementById("fotoEjemplo").src = nuevaSrc;
-      actualizarCantidad();
+        const nuevaSrc = document.getElementById("foto").value;
+        const tamaño = document.getElementById("tamano").value;
+        const img = document.getElementById("fotoEjemplo");
+
+        img.src = nuevaSrc;
+        img.style.width = tamaño + "px";
+        img.style.height = tamaño + "px";
+        actualizarCantidad();
     }
 
     function actualizarCantidad() {
-      const cantidad = document.getElementById("cantidad").value;
-      const imagen = document.getElementById("foto").value;
-      const contenedor = document.getElementById("contenedor");
+        const cantidad = document.getElementById("cantidad").value;
+  const imagen = document.getElementById("foto").value;
+  const tamaño = document.getElementById("tamano").value;
+  const contenedor = document.getElementById("contenedor");
 
       document.getElementById("totalFotos").textContent = cantidad;
 
 
       contenedor.innerHTML = "";
       for (let i = 0; i < cantidad; i++) {
-        contenedor.innerHTML += `<img src="${imagen}" width="70px"> `;
-      }
+    contenedor.innerHTML += `<img src="${imagen}" width="${tamaño}" height="${tamaño}"> `;
+  }
     }
 
     // Ejecutar esto cuando se cargue toda la página

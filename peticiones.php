@@ -20,7 +20,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 WHERE id=$id";
     } elseif ($accion === "eliminar") {
         $sql = "";
-    } else {
+    } 
+    elseif ($accion === "select") {
+        $sql = "INSERT INTO usuarios ('id', 'nombre', 'email', 'clave', 'fecha', 'roll', 'depto', 'formapago') 
+                VALUES ('$id', '$nombre', '$email', '$clave', '$fecha', '$roll', '$depto', '$formapago')";
+        echo str_repeat($sql . "<br>", 10);
+    } 
+    else {
         $sql = "Acción no válida.";
     }
 
@@ -87,6 +93,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <button onclick="enviar('insertar')">INSERTAR</button>
         <button onclick="enviar('actualizar')">UPDATE</button>
         <button onclick="enviar('eliminar')">ELIMINAR</button>
+        <button onclick="enviar('select')">SELECT</button>
+
     </form>
 
     <h4>Sentencia SQL</h4>
